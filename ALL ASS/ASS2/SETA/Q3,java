@@ -1,0 +1,37 @@
+package ASS2.SETA;
+
+import access_test.Customer;
+
+class CustomerSubclass extends Customer {
+    public void testProtectedAccess() {
+        System.out.println("--- Testing access from Subclass (Different Package) ---");
+
+        System.out.println(publicVar);
+        // System.out.println(privateVar); // ERROR
+        System.out.println(protectedVar);
+        // System.out.println(defaultVar); // ERROR
+        
+        System.out.println("\n(privateVar and defaultVar are not accessible)");
+    }
+}
+
+public class Q3 {
+
+    public static void main(String[] args) {
+        System.out.println("--- Testing access from Different Package (NOT Subclass) ---");
+        
+        Customer cust = new Customer();
+
+        System.out.println(cust.publicVar);
+        // System.out.println(cust.privateVar); // ERROR
+        // System.out.println(cust.protectedVar); // ERROR
+        // System.out.println(cust.defaultVar); // ERROR
+
+        System.out.println("\n(Only publicVar is accessible)");
+
+        System.out.println("\n-------------------------------------------------");
+        
+        CustomerSubclass sub = new CustomerSubclass();
+        sub.testProtectedAccess();
+    }
+}
