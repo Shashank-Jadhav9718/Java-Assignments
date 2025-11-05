@@ -1,19 +1,16 @@
 package ASS1.SETA;
 
-
-public class Q3 {
-
-    
-    private int number;
+class Mynumber{
+        private int number;
 
     
-    public Q3() {
+    public Mynumber() {
         this.number = 0;
     }
 
 
     
-    public Q3(int number) {
+    public Mynumber(int number) {
         this.number = number; // 'this' disambiguates field from parameter
     }
 
@@ -41,6 +38,11 @@ public class Q3 {
     }
 
 
+}
+
+public class Q3 {
+
+
     public static void main(String[] args) {
     
         if (args.length > 0) {
@@ -48,7 +50,7 @@ public class Q3 {
         
             int val = Integer.parseInt(args[0]);
             
-            Q3 numObj = new Q3(val);
+            Mynumber numObj = new Mynumber(val);
             
             System.out.println("--- Testing Number: " + val + " ---");
             
